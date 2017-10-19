@@ -23,6 +23,8 @@ class ComposerStaticInitDAV
     public static $classMap = array (
         'OCA\\DAV\\AppInfo\\Application' => __DIR__ . '/..' . '/../lib/AppInfo/Application.php',
         'OCA\\DAV\\AppInfo\\PluginManager' => __DIR__ . '/..' . '/../lib/AppInfo/PluginManager.php',
+        'OCA\\DAV\\AppleProvisioning\\AppleProvisioningNode' => __DIR__ . '/..' . '/../lib/AppleProvisioning/AppleProvisioningNode.php',
+        'OCA\\DAV\\AppleProvisioning\\AppleProvisioningPlugin' => __DIR__ . '/..' . '/../lib/AppleProvisioning/AppleProvisioningPlugin.php',
         'OCA\\DAV\\Avatars\\AvatarHome' => __DIR__ . '/..' . '/../lib/Avatars/AvatarHome.php',
         'OCA\\DAV\\Avatars\\AvatarNode' => __DIR__ . '/..' . '/../lib/Avatars/AvatarNode.php',
         'OCA\\DAV\\Avatars\\RootCollection' => __DIR__ . '/..' . '/../lib/Avatars/RootCollection.php',

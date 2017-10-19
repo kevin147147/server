@@ -8,6 +8,8 @@ $baseDir = $vendorDir;
 return array(
     'OCA\\DAV\\AppInfo\\Application' => $baseDir . '/../lib/AppInfo/Application.php',
     'OCA\\DAV\\AppInfo\\PluginManager' => $baseDir . '/../lib/AppInfo/PluginManager.php',
+    'OCA\\DAV\\AppleProvisioning\\AppleProvisioningNode' => $baseDir . '/../lib/AppleProvisioning/AppleProvisioningNode.php',
+    'OCA\\DAV\\AppleProvisioning\\AppleProvisioningPlugin' => $baseDir . '/../lib/AppleProvisioning/AppleProvisioningPlugin.php',
     'OCA\\DAV\\Avatars\\AvatarHome' => $baseDir . '/../lib/Avatars/AvatarHome.php',
     'OCA\\DAV\\Avatars\\AvatarNode' => $baseDir . '/../lib/Avatars/AvatarNode.php',
     'OCA\\DAV\\Avatars\\RootCollection' => $baseDir . '/../lib/Avatars/RootCollection.php',

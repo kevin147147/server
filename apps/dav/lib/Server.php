@@ -32,6 +32,7 @@
  */
 namespace OCA\DAV;
 
+use OCA\DAV\AppleProvisioning\AppleProvisioningPlugin;
 use OCA\DAV\CalDAV\BirthdayService;
 use OCA\DAV\CardDAV\ImageExportPlugin;
 use OCA\DAV\CardDAV\PhotoCache;
@@ -272,6 +273,12 @@ class Server {
 				$this->server->addPlugin(new \OCA\DAV\CalDAV\BirthdayCalendar\EnablePlugin(
 					\OC::$server->getConfig(),
 					\OC::$server->query(BirthdayService::class)
+				));
+				$this->server->addPlugin(new AppleProvisioningPlugin(
+					\OC::$server->getUserSession(),
+					\OC::$server->getURLGenerator(),
+					\OC::$server->getThemingDefaults(),
+					\OC::$server->getRequest()
 				));
 			}
 
