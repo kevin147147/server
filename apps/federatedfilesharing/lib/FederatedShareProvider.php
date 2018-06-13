@@ -163,6 +163,16 @@ class FederatedShareProvider implements IShareProvider {
 		$itemType = $share->getNodeType();
 		$permissions = $share->getPermissions();
 		$sharedBy = $share->getSharedBy();
+		$shareType = $share->getShareType();
+
+		if ($shareType === \OCP\Share::SHARE_TYPE_REMOTE_GROUP &&
+			!$this->isOutgoingServer2serverGroupShareEnabled()
+		) {
+			$message = 'It is not allowed to send federated group shares from this server.';
+			$message_t = $this->l->t('It is not allowed to send federated group shares from this server.');
+			$this->logger->debug($message, ['app' => 'Federated File Sharing']);
+			throw new \Exception($message_t);
+		}
 
 		/*
 		 * Check if file is not already shared with the remote user
@@ -264,7 +274,8 @@ class FederatedShareProvider implements IShareProvider {
 				$share->getShareOwner(),
 				$ownerCloudId->getId(),
 				$share->getSharedBy(),
-				$sharedByFederatedId
+				$sharedByFederatedId,
+				$share->getShareType()
 			);
 
 			if ($send === false) {

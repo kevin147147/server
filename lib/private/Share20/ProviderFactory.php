@@ -135,7 +135,8 @@ class ProviderFactory implements IProviderFactory {
 				$this->serverContainer->getConfig(),
 				$this->serverContainer->getUserManager(),
 				$this->serverContainer->getCloudIdManager(),
-				$this->serverContainer->getGlobalScaleConfig()
+				$this->serverContainer->getGlobalScaleConfig(),
+				$this->serverContainer->getCloudFederationProviderManager()
 			);
 		}
 
